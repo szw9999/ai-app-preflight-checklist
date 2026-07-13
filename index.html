@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free, evidence-based pre-launch checklist for React and TypeScript applications built with AI assistance.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="AI App Preflight Checklist">
+  <meta property="og:description" content="Check repository evidence, trust boundaries, and release readiness before shipping.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://szw9999.github.io/ai-app-preflight-checklist/">
+  <meta property="og:image" content="https://szw9999.github.io/ai-app-preflight-checklist/assets/preflight-cover.png">
+  <title>AI App Preflight Checklist</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="AI App Preflight home">
+      <span class="brand-mark" aria-hidden="true">AP</span>
+      <span>AI App Preflight</span>
+    </a>
+    <span class="header-label">Free checklist</span>
+  </header>
+
+  <main>
+    <section class="intro-band" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">React and TypeScript</p>
+        <h1 id="page-title">Pre-launch evidence checklist</h1>
+        <p class="intro-text">Record what you can prove before publishing an AI-built application. Items left unverified stay visible as unknown rather than being treated as safe.</p>
+      </div>
+      <div class="progress-panel" aria-live="polite">
+        <div class="progress-heading">
+          <span id="progress-label">0 of 15 confirmed</span>
+          <strong id="progress-percent">0%</strong>
+        </div>
+        <progress id="progress-bar" max="15" value="0">0%</progress>
+        <p id="attention-label">0 items need work</p>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <div id="checklist" class="checklist" aria-label="Pre-launch checklist"></div>
+
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Current result</h2>
+        <dl class="summary-counts">
+          <div>
+            <dt>Confirmed</dt>
+            <dd id="confirmed-count">0</dd>
+          </div>
+          <div>
+            <dt>Needs work</dt>
+            <dd id="attention-count">0</dd>
+          </div>
+          <div>
+            <dt>Not checked</dt>
+            <dd id="unknown-count">15</dd>
+          </div>
+        </dl>
+        <p id="decision-message" class="decision-message">Start with the items that protect credentials and server-side authorization.</p>
+        <div class="summary-actions">
+          <button id="download-report" class="button button-primary" type="button">Download summary</button>
+          <button id="print-report" class="button button-secondary" type="button">Print</button>
+          <button id="reset-checklist" class="button button-quiet" type="button">Reset</button>
+        </div>
+        <p class="storage-note">Progress is stored only in this browser.</p>
+      </aside>
+    </div>
+
+    <section class="product-band" aria-labelledby="product-title">
+      <img src="assets/preflight-cover.png" alt="AI App Preflight repository health check cover showing tests, dependencies, risky patterns, and prioritized next steps" width="1000" height="750">
+      <div>
+        <p class="eyebrow">Deeper local inspection</p>
+        <h2 id="product-title">Turn repository evidence into a reviewable report</h2>
+        <p>The offline edition checks selected project files locally and exports Markdown and JSON without uploading the repository or running project code.</p>
+        <a id="product-link" class="button button-primary" href="#" hidden>Get the offline preflight tool</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>This checklist is a planning aid, not a penetration test, security certification, or guarantee that an application is defect-free.</p>
+  </footer>
+
+  <template id="category-template">
+    <section class="checklist-category">
+      <div class="category-heading">
+        <div>
+          <p class="category-number"></p>
+          <h2></h2>
+        </div>
+        <p class="category-summary"></p>
+      </div>
+      <div class="checklist-rows"></div>
+    </section>
+  </template>
+
+  <template id="item-template">
+    <article class="checklist-row">
+      <div class="item-copy">
+        <h3></h3>
+        <p></p>
+      </div>
+      <fieldset class="status-control">
+        <legend class="visually-hidden">Verification status</legend>
+        <label>
+          <input type="radio" value="unknown">
+          <span>Not checked</span>
+        </label>
+        <label>
+          <input type="radio" value="confirmed">
+          <span>Confirmed</span>
+        </label>
+        <label>
+          <input type="radio" value="attention">
+          <span>Needs work</span>
+        </label>
+      </fieldset>
+    </article>
+  </template>
+
+  <script src="site-config.js"></script>
+  <script src="checklist-data.js"></script>
+  <script src="checklist-core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

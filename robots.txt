@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://szw9999.github.io/ai-app-preflight-checklist/sitemap.xml
