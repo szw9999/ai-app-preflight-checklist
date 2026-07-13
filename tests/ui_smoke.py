@@ -37,6 +37,14 @@ def main() -> None:
         assert page.locator("#progress-label").inner_text() == "1 of 15 confirmed"
         assert page.locator("#attention-count").inner_text() == "1"
 
+        sample = context.new_page()
+        sample.goto((ROOT / "sample-report.html").as_uri())
+        sample.wait_for_selector(".finding")
+        assert sample.title() == "Sample AI App Pre-Launch Health Report"
+        assert sample.get_by_text("small synthetic test project", exact=False).is_visible()
+        assert sample.get_by_text("Raw HTML injection path", exact=True).is_visible()
+        assert sample.get_by_text("Back to the interactive checklist", exact=True).is_visible()
+
         with TemporaryDirectory() as temp_dir:
             with page.expect_download() as download_info:
                 page.locator("#download-report").click()
@@ -53,6 +61,15 @@ def main() -> None:
         overflow = mobile.evaluate("document.documentElement.scrollWidth > document.documentElement.clientWidth")
         assert overflow is False
         assert mobile.locator(".status-control").first.is_visible()
+
+        mobile_sample = context.new_page()
+        mobile_sample.set_viewport_size({"width": 390, "height": 844})
+        mobile_sample.goto((ROOT / "sample-report.html").as_uri())
+        mobile_sample.wait_for_selector(".finding")
+        sample_overflow = mobile_sample.evaluate(
+            "document.documentElement.scrollWidth > document.documentElement.clientWidth"
+        )
+        assert sample_overflow is False
         assert external_requests == []
         browser.close()
 

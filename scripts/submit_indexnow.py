@@ -62,12 +62,14 @@ def submit(submission_url: str, timeout: float = 30.0) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--url", help="Override the configured URL for another page covered by the same key.")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
     config = load_config(args.config)
+    submitted_url = args.url or config["url"]
     submission_url = build_submission_url(
-        config["url"], config["key"], config["keyLocation"]
+        submitted_url, config["key"], config["keyLocation"]
     )
     if args.dry_run:
         print(submission_url)

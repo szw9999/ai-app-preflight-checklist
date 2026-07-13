@@ -434,6 +434,12 @@ progress {
   margin: 16px 0 22px;
 }
 
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 footer {
   background: var(--ink);
   color: #d7deea;

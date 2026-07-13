@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A transparent sample AI app pre-launch health report generated from a synthetic React and TypeScript test project.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Sample AI App Pre-Launch Health Report">
+  <meta property="og:description" content="Inspect the scope, evidence, finding, recommendation, and limitations of a synthetic pre-launch report.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://szw9999.github.io/ai-app-preflight-checklist/sample-report.html">
+  <meta property="og:image" content="https://szw9999.github.io/ai-app-preflight-checklist/assets/preflight-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Sample AI App Pre-Launch Health Report</title>
+  <link rel="canonical" href="https://szw9999.github.io/ai-app-preflight-checklist/sample-report.html">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sample-report.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="AI App Preflight home">
+      <span class="brand-mark" aria-hidden="true">AP</span>
+      <span>AI App Preflight</span>
+    </a>
+    <span class="header-label">Synthetic sample</span>
+  </header>
+
+  <main class="report-main">
+    <nav class="report-nav" aria-label="Breadcrumb">
+      <a href="./">Back to the interactive checklist</a>
+    </nav>
+
+    <header class="report-hero">
+      <div>
+        <p class="eyebrow">Transparent sample output</p>
+        <h1>AI App Pre-Launch Health Report</h1>
+        <p class="report-intro">This report was generated from a small synthetic test project. It demonstrates the report structure and evidence language, not the likely number or severity of findings in another repository.</p>
+      </div>
+      <dl class="report-facts">
+        <div>
+          <dt>Generated</dt>
+          <dd>2026-07-13</dd>
+        </div>
+        <div>
+          <dt>Inspection mode</dt>
+          <dd>Local read-only static inspection</dd>
+        </div>
+        <div>
+          <dt>Project code executed</dt>
+          <dd>No</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="report-section" aria-labelledby="summary-heading">
+      <div class="section-heading">
+        <p class="section-number">01</p>
+        <h2 id="summary-heading">Summary</h2>
+      </div>
+      <div class="metric-grid">
+        <article>
+          <span>High priority</span>
+          <strong>0</strong>
+        </article>
+        <article>
+          <span>Medium priority</span>
+          <strong>1</strong>
+        </article>
+        <article>
+          <span>Low priority</span>
+          <strong>0</strong>
+        </article>
+        <article>
+          <span>Test files detected</span>
+          <strong>1</strong>
+        </article>
+      </div>
+      <p class="scope-note">Scope: 2 source files, approximately 8 source lines, and 1 test file from a deliberately small fixture. The sample is designed to show wording and traceability, not benchmark coverage.</p>
+    </section>
+
+    <section class="report-section" aria-labelledby="signals-heading">
+      <div class="section-heading">
+        <p class="section-number">02</p>
+        <h2 id="signals-heading">Positive signals</h2>
+      </div>
+      <ul class="signal-list">
+        <li>One GitHub Actions workflow file detected</li>
+        <li>One JavaScript or TypeScript test file detected</li>
+        <li>Build, lint, and test package scripts available</li>
+        <li>Root dependency lockfile present</li>
+        <li>TypeScript strict mode enabled in the parsed configuration</li>
+        <li>Root README, license, and security policy present</li>
+      </ul>
+    </section>
+
+    <section class="report-section" aria-labelledby="finding-heading">
+      <div class="section-heading">
+        <p class="section-number">03</p>
+        <h2 id="finding-heading">Finding</h2>
+      </div>
+      <article class="finding">
+        <div class="finding-meta">
+          <span class="severity">Medium</span>
+          <code>dangerous-html</code>
+        </div>
+        <h3>Raw HTML injection path</h3>
+        <dl>
+          <div>
+            <dt>Location</dt>
+            <dd><code>src/main.ts:2</code></dd>
+          </div>
+          <div>
+            <dt>Why it matters</dt>
+            <dd>Raw HTML insertion can create cross-site scripting risk when content is not trusted.</dd>
+          </div>
+          <div>
+            <dt>Recommended next step</dt>
+            <dd>Trace the data source and sanitize untrusted HTML with a maintained allowlist-based sanitizer.</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="report-section limitations" aria-labelledby="limitations-heading">
+      <div class="section-heading">
+        <p class="section-number">04</p>
+        <h2 id="limitations-heading">Limitations</h2>
+      </div>
+      <ul>
+        <li>This automated health check is not a security certification, compliance audit, or penetration test.</li>
+        <li>The checker does not execute tests, builds, package managers, or project scripts.</li>
+        <li>Pattern matches may include false positives and require contextual review.</li>
+        <li>Absence of a finding does not prove absence of defects or vulnerabilities.</li>
+        <li>Runtime behavior, infrastructure, production data, and files outside the selected folder are not inspected.</li>
+      </ul>
+    </section>
+
+    <section class="report-return" aria-labelledby="return-heading">
+      <div>
+        <p class="eyebrow">Try the free first step</p>
+        <h2 id="return-heading">Record the evidence you already have</h2>
+      </div>
+      <a class="button button-primary" href="./">Open the interactive checklist</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>This synthetic sample demonstrates output format only. It is not a claim about any real customer repository.</p>
+  </footer>
+</body>
+</html>

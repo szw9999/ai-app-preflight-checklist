@@ -55,6 +55,12 @@ Submit only after a meaningful public content update:
 python -B scripts\submit_indexnow.py
 ```
 
+Submit another changed page covered by the same project-path key:
+
+```powershell
+python -B scripts\submit_indexnow.py --url "https://szw9999.github.io/ai-app-preflight-checklist/sample-report.html"
+```
+
 An HTTP 200 or 202 means the URL notification was received. It does not guarantee crawling, indexing, ranking, traffic, or sales.
 
 ## Public URL

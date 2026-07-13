@@ -45,3 +45,14 @@ test("generated browser configuration matches the JSON source", () => {
   assert.deepEqual(JSON.parse(JSON.stringify(sandbox.window.PREFLIGHT_SITE_CONFIG)), source);
 });
 
+test("homepage links to a transparent synthetic sample report", () => {
+  const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  const sample = fs.readFileSync(path.join(root, "sample-report.html"), "utf8");
+
+  assert.match(homepage, /id="sample-report-link"[^>]+href="sample-report\.html"/);
+  assert.match(sample, /synthetic test project/i);
+  assert.match(sample, /local read-only static inspection/i);
+  assert.match(sample, /Raw HTML injection path/);
+  assert.match(sample, /not a security certification/i);
+  assert.match(sample, /href="\.\/"[^>]*>Back to the interactive checklist<\/a>/);
+});
