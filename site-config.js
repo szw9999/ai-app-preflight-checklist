@@ -1,5 +1,5 @@
 window.PREFLIGHT_SITE_CONFIG = Object.freeze({
   checkoutUrl: "",
-  productName: "AI App Preflight: Offline React & TypeScript Health Check",
-  priceLabel: "USD 29"
+  productName: "AI App Launch Evidence Kit for React & TypeScript",
+  priceLabel: "USD 19"
 });
