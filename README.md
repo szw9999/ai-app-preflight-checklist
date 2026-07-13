@@ -29,7 +29,33 @@ python -B tests\ui_smoke.py
 
 ## Checkout Link
 
-The paid-product link is deliberately hidden while `checkoutUrl` is empty in `site-config.js`. After the storefront is live, replace the empty value with the official checkout URL and rerun both test commands before publishing.
+The paid-product link is deliberately hidden while `checkoutUrl` is empty. `site-config.json` is the source of truth and `site-config.js` is generated for direct browser use.
+
+Validate a future public checkout URL without changing files:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\activate-checkout.ps1 -CheckoutUrl "https://example.lemonsqueezy.com/buy/example" -DryRun
+```
+
+After merchant onboarding provides the real public URL, the same script can configure, test, commit, push, wait for GitHub Pages, and verify the live configuration by adding `-Publish`.
+
+## Search Discovery
+
+The site includes canonical metadata, structured data, `robots.txt`, and `sitemap.xml`. The IndexNow verification file is scoped to this GitHub Pages project path.
+
+Validate the IndexNow request without submitting it:
+
+```powershell
+python -B scripts\submit_indexnow.py --dry-run
+```
+
+Submit only after a meaningful public content update:
+
+```powershell
+python -B scripts\submit_indexnow.py
+```
+
+An HTTP 200 or 202 means the URL notification was received. It does not guarantee crawling, indexing, ranking, traffic, or sales.
 
 ## Public URL
 

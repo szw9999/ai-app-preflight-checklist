@@ -22,7 +22,7 @@ def main() -> None:
         page.goto((ROOT / "index.html").as_uri())
         page.wait_for_selector(".checklist-row")
 
-        assert page.title() == "AI App Preflight Checklist"
+        assert page.title() == "AI-Built App Pre-Launch Checklist | React & TypeScript"
         assert page.locator(".checklist-row").count() == 15
         assert page.locator("#product-link").is_hidden()
         assert page.locator("#progress-label").inner_text() == "0 of 15 confirmed"
